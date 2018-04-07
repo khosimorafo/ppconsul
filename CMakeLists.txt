@@ -9,10 +9,11 @@ cmake_minimum_required(VERSION 3.1)
 project(Ppconsul VERSION 0.1)
 
 if (WIN32)
-    option(BUILD_STATIC_LIB "Build Ppconsul as static library" ON)
+    	option(BUILD_STATIC_LIB "Build Ppconsul as static library" ON)
 else()
-    option(BUILD_STATIC_LIB "Build Ppconsul as static library" OFF)
+	option(BUILD_STATIC_LIB "Build Ppconsul as static library" ON)
 endif()
+
 option(USE_CPPNETLIB "Use cpp-netlib as HTTP backend (CURL is used by default)" OFF)
 
 include(GNUInstallDirs)
@@ -89,7 +90,7 @@ endif()
 
 add_subdirectory(ext/json11)
 add_subdirectory(src)
-add_subdirectory(tests)
+# add_subdirectory(tests)
 
 install(
     DIRECTORY "${HEADERS_DIR}"
